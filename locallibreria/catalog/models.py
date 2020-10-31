@@ -44,7 +44,9 @@ class Videojuego(models.Model):
  		default = 'RP',
  		help_text = 'Clasificacion de edad recomendada para jugar',
  		)
+ 	descripcion = models.TextField(
+ 		max_length = 1000,)
 
  	def __str__(self):
  		"""String que representa el modelo del objeto"""
- 		return f'(self.id) ((self.nombre))'
+ 		return ((self.nombre),(self.genero),(self.precio),(self.ESRB))
