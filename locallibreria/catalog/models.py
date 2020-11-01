@@ -45,8 +45,13 @@ class Videojuego(models.Model):
  		help_text = 'Clasificacion de edad recomendada para jugar',
  		)
  	descripcion = models.TextField(
- 		max_length = 1000,)
-
+ 		max_length = 1000,
+ 		blank = True,
+ 		default = '',
+ 		)
+ 	imagen = models.ImageField(
+ 		upload_to='vdgi',
+ 		default = 'vdgi/noimage.png')
  	def __str__(self):
  		"""String que representa el modelo del objeto"""
- 		return ((self.nombre),(self.genero),(self.precio),(self.ESRB))
+ 		return f'{self.nombre},{self.genero},{self.precio},{self.ESRB},{self.descripcion},{self.imagen}'
