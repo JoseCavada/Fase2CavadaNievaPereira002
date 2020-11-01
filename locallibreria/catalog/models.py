@@ -50,8 +50,11 @@ class Videojuego(models.Model):
  		default = '',
  		)
  	imagen = models.ImageField(
- 		upload_to='vdgi',
- 		default = 'vdgi/noimage.png')
+ 		upload_to='media/vdgi',
+ 		null=True, 
+ 		blank=True,
+ 		default = 'media/vdgi/noimage.png'
+ 		)
  	def __str__(self):
  		"""String que representa el modelo del objeto"""
- 		return f'{self.nombre},{self.genero},{self.precio},{self.ESRB},{self.descripcion},{self.imagen}'
+ 		return f'{self.nombre},{self.genero},{self.precio},{self.ESRB},{self.descripcion}'
