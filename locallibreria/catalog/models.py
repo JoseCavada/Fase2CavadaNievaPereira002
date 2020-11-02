@@ -55,6 +55,8 @@ class Videojuego(models.Model):
  		blank=True,
  		default = 'media/vdgi/noimage.png'
  		)
+ 	def get_absolute_url(self):
+ 		return reverse('videojuego_detail', args=[str(self.id)])
  	def __str__(self):
  		"""String que representa el modelo del objeto"""
  		return f'{self.nombre},{self.genero},{self.precio},{self.ESRB},{self.descripcion}'

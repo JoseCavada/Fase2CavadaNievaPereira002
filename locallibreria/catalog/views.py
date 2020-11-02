@@ -25,3 +25,23 @@ def registrador(request):
 	return render(request,
 		'registrador.html',
 		)
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+class VideojuegoCreate(CreateView):
+	model = Videojuego
+	fields ='__all__' 
+
+class VideojuegoUpdate(UpdateView):
+	model = Videojuego
+	fields = ['nombre','genero','precio','ESRB','descripcion','imagen',]
+
+class VideojuegoDelete(DeleteView):
+	model = Videojuego
+	success_url = reverse_lazy('ofertas')
+
+from django.views import generic
+
+class VideojuegoDetailView(generic.DetailView):
+	model = Videojuego
