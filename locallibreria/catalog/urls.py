@@ -6,12 +6,12 @@ urlpatterns = [
 	path('contacto/',views.contacto,name='contacto'),
 	path('registro',views.registrador,name='registrador'),
 	path('inicioSesion',views.iniciador,name='iniciador'),
-	path('videojuego/<pk>',views.VideojuegoDetailView.as_view(),name='videojuego_detail'),
+	path('videojuego/<str:pk>',views.VideojuegoDetailView.as_view(),name='videojuego_detail'),
 
 ]
 urlpatterns += [
 	path('videojuego/create/',views.VideojuegoCreate.as_view(),name='videojuego_create'),
-	path('videojuego/<pk>/update/',views.VideojuegoUpdate.as_view(),name='videojuego_update'),	
-	path('videojuego/<pk>/delete/',views.VideojuegoDelete.as_view(),name='videojuego_delete'),
+	path('videojuego/<str:pk>/update/',views.VideojuegoUpdate.as_view(),name='videojuego_update'),	
+	path('videojuego/<str:pk>/delete/',views.VideojuegoDelete.as_view(),name='videojuego_delete'),
 
 ]
