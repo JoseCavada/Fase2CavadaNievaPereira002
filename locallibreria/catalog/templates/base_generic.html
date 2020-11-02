@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block title %}{% endblock %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<base href="/">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark"  > 
+			<p class="navbar navbar-brand">Akatsuki Gamestore</p> 
+			<button class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+			<samp class="narvar-toggler-icon"></samp>	
+			</button>
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="navbar-nav">
+				<li class="nav-link"><a href="{% url 'index' %}">Inicio<span class="sr-only"></span></a></li> 
+				<li class="nav-link"><a href="{% url 'ofertas' %}">Juegos</a></li>  
+				<li class="nav-link"><a href="{% url 'contacto' %}">Contáctenos</a></li>  
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<body>
+		{% block content%} {% endblock %}
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+	</body>
+	<footer id="footer" style="text-align: center; display:block; background-color:#8CF3D1;">
+		<div class="containter-fluid col-12" style="display: inline-flex;text-align:center" >
+			<p class="container-fluid" style="text-align: left;">	Ubicados en: Moneda 970, Santiago, Región Metropolitana, Chile.
+			</p>
+
+		</div>
+		
+		<div class="containter-fluid col-12"  >
+			<a href="{% url 'contacto' %}">
+				<p  class="container-fluid" style="text-align: left;"> Contactanos
+			
+				</p>
+			</a>
+
+		</div>
+
+		<div class="containter-fluid col-12" style= text-align:left>
+			<a  id="f1" href="https://www.facebook.com/"> <img src="{% static 'img/f1.jpg'%}" alt="facebook" width="60px" height="50px" >  Facebook</a>
+
+
+		</div>
+		<div class="containter-fluid col-12" style= text-align:left>
+			<a  id="f1" href="https://twitter.com/home"> <img src="{% static 'img/t1.png'%} " alt="twitter" width="60px" height="50px" >  Twitter</a>
+
+
+		</div>
+
+		<div class="containter-fluid col-12" style= text-align:left>
+			<a  id="f1" href="https://www.instagram.com/?hl=es-la"> <img src="{% static 'img/i1.png'%}" alt="insta" width="60px" height="50px" >  Instagram</a>
+
+
+		</div>
+
+		
+				
+		
+ 		
+
+	</footer>
+</html>

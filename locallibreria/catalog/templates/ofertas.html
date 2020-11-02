@@ -1,0 +1,76 @@
+{% extends 'base_generic.html'%}
+	{% block title %}<title>Ofertones</title> {% endblock %}
+
+{% block content %} 
+  {% load static%}
+<div class="row justify-content-center">
+	<div class="col-lg-6">
+    	<div id="carousel" class="carousel slide" data-ride="carousel">
+	      	<ol class="carousel-indicators">
+    	    	<li data-target="#carousel1" data-slide-to="0" class="active"></li>
+        		<li data-target="#carousel1" data-slide-to="1"></li>
+	        	<li data-target="#carousel1" data-slide-to="2"></li>
+      		</ol>
+      	<!-- diapositivas -->
+      		<div class="carousel-inner w-100 ">
+        		<div class="carousel-item active">
+          		<img class="d-block w-100" src="{% static 'img/juego1.jpg' %}" alt="" height="700px">
+            		<div class="carousel-caption">
+              		<h3 class="todos">GTA V</h3>
+              		<p class="papara"><i> Grand Theft Auto V es un videojuego de acción-aventura de mundo abierto</i></p>
+            		</div>
+        		</div>
+        		<div class="carousel-item">
+            		<img class="d-block w-100" src="{% static 'img/juego2.jpg' %}" alt="" height="700px">
+            		<div class="carousel-caption">
+        	      	<h3 class="todos">Team Fortress 2</h3>
+    	          	<p class="papara"><i>The Orange Box, creado por Valve, es un paquete de videojuegos que contiene Half-Life 2, Half-Life 2: Episode One, Half-Life 2: Episode Two, Portal y Team Fortress 2</i></p>
+	            	</div>
+        		</div>
+        		<div class="carousel-item">
+	            	<img class="d-block w-100" src="{% static 'img/juego3.jpg' %}" alt="" height="700px">
+    	        	<div class="carousel-caption">
+        	    	  <h3 class="todos">Dark Souls</h3>
+        		      <p class="papara"><i>La serie Souls es una serie de videojuegos pertenecientes al género de rol y de acción</i></p>
+    	        	</div>
+		        </div>
+    	  	</div>
+      		<!-- botones de desplazamiento a izquierda y derecha -->      
+      		<a class="carousel-control-prev" href="#carousel" data-slide="prev">
+    	    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	        	<span class="sr-only">Previous</span>
+      		</a>
+      		<a class="carousel-control-next" href="#carousel" data-slide="next">
+	        	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    	    	<span class="sr-only">Next</span>
+      		</a>
+      	</div>
+	</div>
+</div>
+  <section id="galeria" class="container">
+        <div class="text-center pt-5">
+          <h1>Juegazos</h1>
+        </div>
+
+        <div class="row">
+          {% for videojuego in num_videojg %}
+          <div class="col-lg-4">
+            <div class="card">
+              <img class="card-img-top" src="{{ videojuego.imagen.url }}">
+              <div class="card-body">
+                <h4 class="card-title"> {{ videojuego.nombre }}</h4>
+                <p class="card-text"><h3>Genero</h3> {{videojuego.genero}} </p>
+                <p class="card-text"><h3>Clasificación</h3><strong>{{videojuego.ESRB}}</strong></p>
+                <p class="card-text"><h3>Descripción</h3>{{videojuego.descripcion}}</p>
+                <p class="card-text"><h3>Precio</h3> ${{videojuego.precio}}</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
+              </div>
+            </div>
+          </div>          
+          {% endfor %}
+        </div>
+
+
+
+  </section>
+{% endblock %}
